@@ -4,47 +4,7 @@ import styles from '../styles/Home.module.css'
 
 export async function getServerSideProps(context) {
 
-  var AWS = require('aws-sdk');
-  const SESConfig = {
-    credentials: {
-      accessKeyId: 'AKIA4JC5HBAVHYOGX3OX',
-      secretAccessKey: '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',
-    },
-    apiVersion: 'latest',
-    accessKeyId: 'AKIA4JC5HBAVHYOGX3OX',
-    accessSecretKey: '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',
-    region: "ap-southeast-1"
-  }
-  AWS.config.update(SESConfig);
-
-  var quicksight = new AWS.QuickSight();
-  var params = {
-    AwsAccountId: '844156569642', /* required */
-    DashboardId: '3d0a7283-5225-4e13-8183-ac9eb4ac698e', /* required */
-    IdentityType: 'IAM', /* required */
-    AdditionalDashboardIds: [
-    ],
-    Namespace: 'default',
-    ResetDisabled: false,
-    SessionLifetimeInMinutes: '30',
-    StatePersistenceEnabled: false,
-    UndoRedoDisabled: false,
-  };
-  let callAPI = async function () {
-    return new Promise((resolve, reject) => {
-      quicksight.getDashboardEmbedUrl(params, function (err, data) {
-        if (err) console.log(err, err.stack); // an error occurred
-        else    // console.log(data);           // successful response
-        {
-          console.log(data);
-          return resolve(data)
-        }
-
-      });
-    });
-  }
-  let temp = await callAPI();
-  return { props: { test: JSON.stringify(temp) } }
+  return { props: { test: 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa' } }
 }
 
 export default function Home(props) {
@@ -57,7 +17,7 @@ export default function Home(props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <iframe src={`${JSON.parse(props.test).EmbedUrl}`}></iframe>
+      {props.test}
 
     </div>
   )
