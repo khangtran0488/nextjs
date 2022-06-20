@@ -8,6 +8,8 @@ export async function getServerSideProps(context) {
 }
 
 export default function Home(props) {
+
+  
   console.log(props)
   return (
     <div className={styles.container}>
