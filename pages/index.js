@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import styles from '../styles/Home.module.css'
 import AWS from 'aws-sdk'
 export async function getServerSideProps(context) {
-
   const SESConfig = {
     credentials: {
       accessKeyId: "AKIA6RBN6FIKD4COMV6U",
@@ -30,7 +29,6 @@ export async function getServerSideProps(context) {
     UndoRedoDisabled: false,
 
   };
-
   return new Promise((resole, reject) => {
     quicksight.getDashboardEmbedUrl(params, function (err, data) {
       // if (err) console.log(err, err.stack); // an error occurred
@@ -39,10 +37,7 @@ export async function getServerSideProps(context) {
         props: { Test: data.EmbedUrl }, // will be passed to the page component as props
       })
     });
-
   })
-
-
 }
 export default function Home(props) {
 
