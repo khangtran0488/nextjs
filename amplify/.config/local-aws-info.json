@@ -1,7 +1,7 @@
 {
   "khang": {
     "configLevel": "project",
-    "useProfile": true,
-    "profileName": "khang"
+    "useProfile": false,
+    "awsConfigFilePath": "C:\\Users\\khang.tc\\.amplify\\awscloudformation\\dh5oGUrVtJ"
   }
 }
