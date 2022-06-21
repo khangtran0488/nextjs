@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styles from '../styles/Home.module.css'
 import AWS from 'aws-sdk'
 export async function getServerSideProps(context) {
@@ -41,11 +41,11 @@ export async function getServerSideProps(context) {
 }
 export default function Home(props) {
 
-  const [url, setUrl] = useState('')
-  useEffect(() => {
+  // const [url, setUrl] = useState('')
+  // useEffect(() => {
 
-    setUrl(props.Test)
-  }, [])
+  //   setUrl(props.Test)
+  // }, [])
   return (
     <div className={styles.container}>
       <Head>
@@ -58,7 +58,7 @@ export default function Home(props) {
         {/* <h1 className={styles.title}>
           {props.Test}
         </h1> */}
-        {url != '' &&
+        {props.Test != '' &&
           <iframe width={900} height={900} src={props.Test} title="W3Schools Free Online Web Tutorials"></iframe>
         }
       </main>
