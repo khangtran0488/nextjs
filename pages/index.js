@@ -65,7 +65,7 @@ export default function Home(props) {
           {props.Test}
         </h1> */}
         {url != '' &&
-          <iframe src={props.Test} title="W3Schools Free Online Web Tutorials"></iframe>
+          <iframe width={900} height={900} src={props.Test} title="W3Schools Free Online Web Tutorials"></iframe>
         }
       </main>
 
