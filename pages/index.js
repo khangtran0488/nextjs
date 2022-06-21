@@ -1,8 +1,7 @@
 import Head from 'next/head'
 import React, { useState, useEffect } from 'react';
 import styles from '../styles/Home.module.css'
-
-var AWS = require('aws-sdk');
+import AWS from 'aws-sdk'
 export async function getServerSideProps(context) {
 
   const SESConfig = {
